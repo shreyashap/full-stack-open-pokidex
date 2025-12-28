@@ -1,18 +1,41 @@
-name: print-date-dir
+# name: print-date-dir
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   print_date_dir:
+#     runs-on: ubuntu:latest
+#     steps:
+#       - name: Print date
+#         run: |
+#           date
+
+#       - name: Print directory
+#         run: |
+#           ls
+
+
+name : print-hello
+
 
 on:
   push:
     branches:
       - main
 
-jobs:
-  print_date_dir:
-    runs-on: ubuntu:latest
-    steps:
-      - name: Print date
-        run: |
-          date
 
-      - name: Print directory
-        run: |
-          ls
+jobs:
+  print-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello shell
+        run: echo "Hello"
+  print-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello python
+        run: print("Hello")
+        shell: python
